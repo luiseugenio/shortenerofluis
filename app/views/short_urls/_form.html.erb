@@ -11,12 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Shorten URL</div>
+        </div>
 
-  <div class="actions">
-    <%= form.submit 'Shorten URL' %>
+         <div class="card-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <%= form.label :url %><label style="color:red">*</label>
+                <%= form.text_field :url, class: 'form-control', placeholder: 'URL', required: true %>
+              </div>
+            </div>
+         </div>
+
+         <div class="card-action">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= form.submit 'Shorten URL', :class => 'btn btn-primary' %>
+              <%= link_to 'Back', short_urls_path, :class => 'btn btn-secondary' %>
+            </div>
+          </div>
+        </div>
+    </div>    
   </div>
+</div>
 <% end %>
