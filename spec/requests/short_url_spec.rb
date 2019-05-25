@@ -30,7 +30,7 @@ RSpec.describe ShortUrl, :type => :request do
     it "List all Short Urls" do
       get "/"
       expect(response).to render_template(:index)
-      expect(response.body).to include("Listing All Short Urls")
+      expect(response.body).to include("Listing All Short URLs")
     end
 
   end
