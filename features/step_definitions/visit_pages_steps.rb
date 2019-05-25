@@ -1,5 +1,5 @@
-Given("I am on the home page") do
-  visit "/"
+Given("I am on the {string} page") do |string|
+  visit "#{string}"
 end
 
 Then("I should see {string}") do |string|
