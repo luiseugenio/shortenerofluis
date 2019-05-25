@@ -37,6 +37,7 @@ gem 'sidekiq'
 gem 'mechanize'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -63,7 +64,6 @@ group :test do
   gem 'rails-controller-testing'
 	gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'faker'
 end
 
 
