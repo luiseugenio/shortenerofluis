@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Short Urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Shortened URL</th>
+      <th>Visit Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @short_urls.each do |short_url| %>
+      <tr>
+        <td><%= short_url.url %></td>
+        <td><%= short_url.title %></td>
+        <td><%= link_to redirect_to_url_url(short_url.shortened_url), redirect_to_url_path(short_url.shortened_url), target: "_blank" %></td>
+        <td><%= short_url.visit_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Short Url', new_short_url_path %>
+<%= link_to 'Top 100', short_url_top_100_path %>

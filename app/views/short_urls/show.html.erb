@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @short_url.url %>
+</p>
+
+<p>
+  <strong>Shortened Url:</strong>
+  <%= link_to redirect_to_url_url(@short_url.shortened_url), redirect_to_url_path(@short_url.shortened_url), target: "_blank" %>
+</p>
+
+<%= link_to 'Back', short_urls_path %>
