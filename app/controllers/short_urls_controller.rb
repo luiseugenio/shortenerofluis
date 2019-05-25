@@ -25,7 +25,8 @@ class ShortUrlsController < ApplicationController
     @short_url = ShortUrl.new(short_url_params) if @short_url.nil?
 
     respond_to do |format|
-      if @short_url.save!
+      if @short_url.valid?
+        @short_url.save!
         AcquireTitleJob.perform_later(@short_url)
 
         format.html { redirect_to @short_url, notice: 'Short url was successfully created.' }
