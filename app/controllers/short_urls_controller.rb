@@ -36,14 +36,14 @@ class ShortUrlsController < ApplicationController
   end
 
   def redirect_to_url
-    @short_url = ShortUrl.find_by_shortened_url(params[:shortened_url])
-
+    short_url = ShortUrl.find_by_shortened_url(params[:shortened_url])
+    
     respond_to do |format|
-      if @short_url.present?
-        url = @short_url.visit
+      if short_url.present?
+        url = short_url.visit
         format.html { redirect_to url, status: :moved_permanently }
       else
-        format.html { render :new }
+        format.html { render :new, status: :bad_request }
       end
     end
   end
