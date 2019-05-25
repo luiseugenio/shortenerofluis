@@ -50,9 +50,25 @@ git push heroku master
 
 The app will perform this actions:
 
-1. Generate Short URLs
-2. Un-Short Shortened URLs
-3. Show TOP 100 most visit links
+1. Index
+```
+get https://vast-thicket-11159.herokuapp.com/
+```
+
+2. Generate Short URLs
+```
+get https://vast-thicket-11159.herokuapp.com/short_urls/new
+```
+
+3. Un-Short Shortened URLs
+```
+get https://vast-thicket-11159.herokuapp.com/:shortened_url
+```
+
+4. Show TOP 100 most visit links
+```
+https://vast-thicket-11159.herokuapp.com/short_urls/top_100
+```
 
 ## What is included?
 
