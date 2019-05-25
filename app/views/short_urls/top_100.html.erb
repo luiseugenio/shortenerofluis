@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Topo 100 Most Frequently Short Urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Url</th>
+      <th>Shortened URL</th>
+      <th>Visit Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @short_urls.each_with_index do |short_url, i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= short_url.url %></td>
+        <td><%= link_to redirect_to_url_url(short_url.shortened_url), redirect_to_url_path(short_url.shortened_url), target: "_blank" %></td>
+        <td><%= short_url.visit_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', short_urls_path %>
